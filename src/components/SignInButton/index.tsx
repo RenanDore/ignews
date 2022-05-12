@@ -6,7 +6,6 @@ import { signIn, useSession, signOut } from "next-auth/react";
 export function SignInButton() {
   //Renomeando o novo objeto chamado "data" para ter o nome "session" que é usado durante a aula:
   const { data: session } = useSession();
-  console.log(session);
 
   return session ? (
     <button
