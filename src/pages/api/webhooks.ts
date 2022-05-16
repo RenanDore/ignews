@@ -15,7 +15,7 @@ async function buffer(readable: Readable) {
 
 export const config = {
   api: {
-    bodyPaser: false,
+    bodyParser: false,
   },
 };
 
@@ -37,7 +37,7 @@ export default async function handle(
       event = stripe.webhooks.constructEvent(
         buf,
         secret,
-        process.env.STRIPE_WEBHOOKS_SECRET
+        process.env.STRIPE_WEBHOOK_SECRET
       );
     } catch (err) {
       return res.status(400).send(`Webhook error: ${err.message}`);
